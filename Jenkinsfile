@@ -30,10 +30,11 @@ pipeline{
                                 }
                            }
                            stage('Integration step'){
-                                agent docker{
+                                agent docker
+                                steps{
                                                reuseNode false
-                                               image 'centos'                                     
-                                     }                                
+                                               image 'centos'   
+                                }                                                                    
                                 steps{
                                 echo "Running the integration test"
                                 }
