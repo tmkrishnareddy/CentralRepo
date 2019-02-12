@@ -13,6 +13,11 @@ pipeline{
                       }
                  }
                  stage('three'){
+                      when{
+                           not {
+                             branch "master"
+                           }
+                      }
                       steps {
                          echo "Deploy has been executed successfully"
                       }
